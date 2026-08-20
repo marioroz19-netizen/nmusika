@@ -17,6 +17,7 @@ export default function RosterGrid({ artists }: { artists: Artist[] }) {
               src={artist.photo}
               alt={artist.name}
               fill
+              unoptimized
               sizes="(max-width: 640px) 50vw, 400px"
               className="object-cover"
             />

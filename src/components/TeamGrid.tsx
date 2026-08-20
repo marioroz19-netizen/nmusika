@@ -15,6 +15,7 @@ export default function TeamGrid({ members }: { members: TeamMember[] }) {
               src={member.photo}
               alt={member.name}
               fill
+              unoptimized
               sizes="(max-width: 640px) 50vw, 280px"
               className="object-cover"
             />
