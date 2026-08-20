@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #05070c;
+  --color-surface: #0d1420;
+  --color-surface-glass: rgba(8, 11, 18, 0.8);
+  --color-border: #161f30;
+  --color-accent: #3d8bff;
+  --color-accent2: #7f5fff;
+  --color-text: #f2f4f8;
+  --color-muted: #8a94a6;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-glass: var(--color-surface-glass);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-accent2: var(--color-accent2);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
+  --font-sans: "Manrope", -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+/* Reveal-on-scroll (paired with the <Reveal> client component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes heroLogoIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+@keyframes heroTextIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes cueIn {
+  from {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+  to {
+    opacity: 0.55;
+    transform: translate(0, 0);
+  }
+}
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 6px);
+  }
+}
