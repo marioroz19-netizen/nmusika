@@ -2,7 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import RosterGrid from "@/components/RosterGrid";
-import HighlightsBento from "@/components/HighlightsBento";
+import ServiciosSection from "@/components/ServiciosSection";
 import CTASection from "@/components/CTASection";
 import { getHero, getRoster, getServices } from "@/lib/notion";
 
@@ -28,7 +28,7 @@ export default async function Home() {
         <RosterGrid artists={preview} />
       </Reveal>
 
-      <HighlightsBento services={services} />
+      <ServiciosSection services={services} />
 
       <CTASection />
     </div>
