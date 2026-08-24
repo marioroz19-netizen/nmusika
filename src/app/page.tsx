@@ -18,6 +18,8 @@ export default async function Home() {
     <div className="max-w-[1180px] mx-auto px-6">
       <Hero hero={hero} />
 
+      <ServiciosSection services={services} />
+
       <Reveal className="py-16">
         <div className="flex justify-between items-baseline mb-6">
           <h2 className="text-[28px] font-extrabold tracking-tight">Roster</h2>
@@ -27,8 +29,6 @@ export default async function Home() {
         </div>
         <RosterGrid artists={preview} />
       </Reveal>
-
-      <ServiciosSection services={services} />
 
       <CTASection />
     </div>
