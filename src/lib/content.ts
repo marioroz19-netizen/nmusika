@@ -68,6 +68,11 @@ export const services: Service[] = [
       "Difusión y relación con medios: notas de prensa, contacto con periodistas y visibilidad del proyecto.",
   },
   {
+    name: "Marketing",
+    description:
+      "Estrategia de marca, campañas digitales y crecimiento de audiencia en redes y plataformas de streaming.",
+  },
+  {
     name: "Producción",
     description: "Grabación, lanzamientos y contenido audiovisual: del estudio a la publicación.",
   },
