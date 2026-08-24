@@ -18,7 +18,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         </video>
       </div>
 
-      <div className="relative h-full max-w-[1180px] mx-auto px-6">
+      <div className="absolute inset-0 max-w-[1180px] mx-auto px-6">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(620px,78vw)] opacity-0"
           style={{
