@@ -18,23 +18,25 @@ export default function Nav() {
   return (
     <header className="absolute top-0 left-0 right-0 z-20">
       <div className="max-w-[1180px] mx-auto px-6">
-        <nav className="flex items-center justify-between py-7">
-          {isHome ? (
-            <span className="shrink-0" aria-hidden="true" />
-          ) : (
-            <Link href="/" className="shrink-0">
-              <Image
-                src="/brand/logo-white.png"
-                alt="N.MUSIKA"
-                width={1616}
-                height={240}
-                priority
-                className="h-[18px] w-auto opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </Link>
-          )}
+        <nav className="grid grid-cols-[1fr_auto_1fr] items-center py-7">
+          <div className="justify-self-start">
+            {isHome ? (
+              <span className="shrink-0" aria-hidden="true" />
+            ) : (
+              <Link href="/" className="shrink-0">
+                <Image
+                  src="/brand/logo-white.png"
+                  alt="N.MUSIKA"
+                  width={1616}
+                  height={240}
+                  priority
+                  className="h-[18px] w-auto opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </Link>
+            )}
+          </div>
 
-          <div className="hidden sm:flex gap-7">
+          <div className="hidden sm:flex gap-7 justify-self-center">
             {LINKS.map((link) => {
               const active = pathname === link.href;
               return (
@@ -53,7 +55,7 @@ export default function Nav() {
 
           <Link
             href="/contacto"
-            className="text-[13px] font-bold bg-text text-bg px-5 py-2.5 rounded-full"
+            className="justify-self-end text-[13px] font-bold bg-text text-bg px-5 py-2.5 rounded-full"
           >
             Contacto
           </Link>
