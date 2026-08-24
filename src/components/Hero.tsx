@@ -15,6 +15,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
           playsInline
           preload="auto"
           className="w-full h-full object-cover opacity-[0.14]"
+          style={{ transform: "scale(1.08)" }}
         >
           <source src="/video/hero-bg.mp4" type="video/mp4" />
         </video>
