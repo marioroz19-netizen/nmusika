@@ -8,11 +8,16 @@ const cardBase =
   "bg-surface-glass border border-border rounded-[20px] p-6 backdrop-blur-md relative overflow-hidden";
 
 export default function HighlightsBento({ services }: { services: Service[] }) {
-  const [booking, management, prensa, produccion] = services;
+  // Buscamos por palabra clave en vez de por posición: así el bento no se
+  // desordena si en Notion se agrega/reordena algún servicio (p. ej. Marketing).
+  const booking = services.find((s) => /booking|gira|concierto/i.test(s.name));
+  const management = services.find((s) => /management|direcci[oó]n|estrategia/i.test(s.name));
+  const prensa = services.find((s) => /prensa|comunicaci[oó]n|medios/i.test(s.name));
+  const produccion = services.find((s) => /producci[oó]n|grabaci[oó]n|estudio/i.test(s.name));
 
   if (!booking || !management || !prensa || !produccion) {
-    // Salvaguarda: si Servicios en Notion tiene menos/más de 4 filas,
-    // no rompemos el layout — simplemente no mostramos el bento.
+    // Salvaguarda: si Servicios en Notion no tiene alguna de estas 4
+    // categorías, no rompemos el layout — simplemente no mostramos el bento.
     return null;
   }
 
