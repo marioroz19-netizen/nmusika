@@ -15,22 +15,24 @@ export default async function Home() {
   const preview = roster.slice(0, 4);
 
   return (
-    <div className="max-w-[1180px] mx-auto px-6">
+    <>
       <Hero hero={hero} />
 
-      <ServiciosSection services={services} />
+      <div className="max-w-[1180px] mx-auto px-6">
+        <ServiciosSection services={services} />
 
-      <Reveal className="py-16">
-        <div className="flex justify-between items-baseline mb-6">
-          <h2 className="text-[28px] font-extrabold tracking-tight">Roster</h2>
-          <Link href="/roster" className="text-accent text-[13px] font-bold">
-            Ver todos →
-          </Link>
-        </div>
-        <RosterGrid artists={preview} />
-      </Reveal>
+        <Reveal className="py-16">
+          <div className="flex justify-between items-baseline mb-6">
+            <h2 className="text-[28px] font-extrabold tracking-tight">Roster</h2>
+            <Link href="/roster" className="text-accent text-[13px] font-bold">
+              Ver todos →
+            </Link>
+          </div>
+          <RosterGrid artists={preview} />
+        </Reveal>
 
-      <CTASection />
-    </div>
+        <CTASection />
+      </div>
+    </>
   );
 }
