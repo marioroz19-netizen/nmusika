@@ -3,7 +3,23 @@ import type { hero as HeroContent } from "@/lib/content";
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
-    <section className="relative min-h-screen text-center">
+    <section className="relative min-h-screen text-center overflow-hidden">
+      <div
+        className="absolute inset-0 -z-10 overflow-hidden"
+        style={{ left: "50%", width: "100vw", transform: "translateX(-50%)" }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-[0.14]"
+        >
+          <source src="/video/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(620px,78vw)] opacity-0"
         style={{
