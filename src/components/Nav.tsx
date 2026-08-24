@@ -7,27 +7,32 @@ import { usePathname } from "next/navigation";
 const LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/roster", label: "Roster" },
-  { href: "/servicios", label: "Servicios" },
+  { href: "/#servicios", label: "Servicios" },
   { href: "/nosotros", label: "Nosotros" },
 ];
 
 export default function Nav() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
     <header className="absolute top-0 left-0 right-0 z-20">
       <div className="max-w-[1180px] mx-auto px-6">
         <nav className="flex items-center justify-between py-7">
-          <Link href="/" className="shrink-0">
-            <Image
-              src="/brand/logo-white.png"
-              alt="N.MUSIKA"
-              width={1616}
-              height={240}
-              priority
-              className="h-[18px] w-auto opacity-90 hover:opacity-100 transition-opacity"
-            />
-          </Link>
+          {isHome ? (
+            <span className="shrink-0" aria-hidden="true" />
+          ) : (
+            <Link href="/" className="shrink-0">
+              <Image
+                src="/brand/logo-white.png"
+                alt="N.MUSIKA"
+                width={1616}
+                height={240}
+                priority
+                className="h-[18px] w-auto opacity-90 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+          )}
 
           <div className="hidden sm:flex gap-7">
             {LINKS.map((link) => {
