@@ -22,7 +22,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(620px,78vw)] opacity-0"
           style={{
-            animation: "heroLogoIn 2.4s ease forwards",
+            animation: "heroLogoIn 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
             filter: "drop-shadow(0 0 60px rgba(61,139,255,0.35))",
           }}
         >
@@ -41,8 +41,8 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
           style={{
             top: "calc(50% + 74px)",
             transform: "translate(-50%, 10px)",
-            animation: "heroTextIn 1.8s ease forwards",
-            animationDelay: "1s",
+            animation: "heroTextIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+            animationDelay: "1.2s",
           }}
         >
           <h1 className="text-[clamp(14px,1.4vw,17px)] font-normal tracking-[0.08em]">
@@ -58,8 +58,8 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
             className="opacity-0"
             style={{
               transform: "translate(0,-20px)",
-              animation: "cueIn 1.6s ease forwards",
-              animationDelay: "2.2s",
+              animation: "cueIn 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
+              animationDelay: "2.4s",
             }}
           >
             {hero.cue}
@@ -68,7 +68,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
             className="text-[15px] opacity-0"
             style={{
               animation:
-                "cueIn 1.2s ease forwards 2.8s, arrowBounce 1.8s ease-in-out infinite 4s",
+                "cueIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards 3.1s, arrowBounce 2.2s ease-in-out infinite 4.6s",
             }}
           >
             ↓
