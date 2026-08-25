@@ -3,7 +3,7 @@ import { Artist } from "@/lib/content";
 
 export default function RosterGrid({ artists }: { artists: Artist[] }) {
   return (
-    <div className="grid grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {artists.map((artist) => (
         <div
           key={artist.slug}
@@ -18,7 +18,7 @@ export default function RosterGrid({ artists }: { artists: Artist[] }) {
               alt={artist.name}
               fill
               unoptimized
-              sizes="(max-width: 640px) 50vw, 400px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover"
             />
           )}
