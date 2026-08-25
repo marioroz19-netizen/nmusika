@@ -81,3 +81,26 @@ body {
     transform: translate(0, 6px);
   }
 }
+
+/* Roster marquee (Home) — fila horizontal con scroll automático infinito */
+@keyframes rosterScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.roster-marquee-track {
+  animation-name: rosterScroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.roster-marquee:hover .roster-marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .roster-marquee-track {
+    animation: none;
+  }
+}
