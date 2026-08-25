@@ -22,7 +22,7 @@ export default function ServiciosSection({ services }: { services: Service[] }) 
   const rest = services.slice(2);
 
   return (
-    <div id="servicios" className="py-16 scroll-mt-28">
+    <div id="servicios" className="py-24 scroll-mt-28">
       {/* Protagonistas: Booking y Management, en grande */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
         {featured.map((service, i) => {
