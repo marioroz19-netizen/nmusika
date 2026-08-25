@@ -19,17 +19,19 @@ export default async function Home() {
 
       <div className="max-w-[1180px] mx-auto px-6">
         <ServiciosSection services={services} />
+      </div>
 
-        <Reveal className="py-24">
-          <div className="flex justify-between items-baseline mb-5">
-            <h2 className="text-[19px] font-extrabold tracking-tight">Roster</h2>
-            <Link href="/roster" className="text-accent text-[13px] font-bold">
-              Ver todos →
-            </Link>
-          </div>
-          <RosterMarquee artists={roster} />
-        </Reveal>
+      <Reveal className="py-24">
+        <div className="max-w-[1180px] mx-auto px-6 flex justify-between items-baseline mb-7">
+          <h2 className="text-[26px] font-extrabold tracking-tight">Roster</h2>
+          <Link href="/roster" className="text-accent text-[13px] font-bold">
+            Ver todos →
+          </Link>
+        </div>
+        <RosterMarquee artists={roster} />
+      </Reveal>
 
+      <div className="max-w-[1180px] mx-auto px-6">
         <CTASection />
       </div>
     </>
