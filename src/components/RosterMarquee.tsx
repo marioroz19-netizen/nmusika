@@ -9,18 +9,18 @@ export default function RosterMarquee({ artists }: { artists: Artist[] }) {
 
   // Se duplica la lista para poder animar de 0% a -50% sin salto visible.
   const loop = [...artists, ...artists];
-  const duration = Math.max(artists.length * 4.5, 18);
+  const duration = Math.max(artists.length * 8, 34);
 
   return (
     <div className="roster-marquee relative w-full overflow-hidden">
       <div
-        className="roster-marquee-track flex w-max gap-3"
+        className="roster-marquee-track flex w-max gap-4"
         style={{ animationDuration: `${duration}s` }}
       >
         {loop.map((artist, i) => (
           <div
             key={`${artist.slug}-${i}`}
-            className="relative shrink-0 w-[110px] sm:w-[130px] aspect-[1/1.05] rounded-[12px] border border-border overflow-hidden flex items-end p-2.5"
+            className="relative shrink-0 w-[135px] sm:w-[165px] aspect-[1/1.05] rounded-[14px] border border-border overflow-hidden flex items-end p-3"
             style={{
               background: "linear-gradient(160deg, #141c2c, #0a0f18)",
             }}
@@ -31,7 +31,7 @@ export default function RosterMarquee({ artists }: { artists: Artist[] }) {
                 alt={artist.name}
                 fill
                 unoptimized
-                sizes="130px"
+                sizes="165px"
                 className="object-cover"
               />
             )}
@@ -52,7 +52,7 @@ export default function RosterMarquee({ artists }: { artists: Artist[] }) {
               />
             )}
             <div className="relative z-10">
-              <div className="font-extrabold text-[10.5px] leading-tight tracking-tight">
+              <div className="font-extrabold text-[12px] leading-tight tracking-tight">
                 {artist.name}
               </div>
             </div>
