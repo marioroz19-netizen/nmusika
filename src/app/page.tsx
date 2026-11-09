@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
-import RosterGrid from "@/components/RosterGrid";
+import RosterManifest from "@/components/RosterManifest";
+import RosterTicker from "@/components/RosterTicker";
 import SectionHead from "@/components/SectionHead";
 import ServiciosSection from "@/components/ServiciosSection";
 import CTASection from "@/components/CTASection";
@@ -18,6 +19,8 @@ export default async function Home() {
     <>
       <Hero hero={hero} />
 
+      <RosterTicker artists={roster} />
+
       <ServiciosSection services={services} />
 
       <section className="bg-bg">
@@ -26,7 +29,7 @@ export default async function Home() {
             <SectionHead eyebrow="Roster" title="Los artistas que representamos." />
           </Reveal>
           <Reveal>
-            <RosterGrid artists={roster} />
+            <RosterManifest artists={roster} />
           </Reveal>
           <Reveal>
             <Link
