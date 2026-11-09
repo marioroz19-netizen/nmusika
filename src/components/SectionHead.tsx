@@ -3,17 +3,20 @@ export default function SectionHead({
   title,
   description,
   align = "left",
+  invert = false,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
+  invert?: boolean;
 }) {
   const centered = align === "center";
+  const mutedClass = invert ? "text-muted-invert" : "text-muted";
   return (
     <div className={`mb-16 max-w-[640px] ${centered ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
-        <div className="text-[12px] font-semibold tracking-[0.14em] uppercase text-muted mb-3.5">
+        <div className={`text-[12px] font-semibold tracking-[0.14em] uppercase ${mutedClass} mb-3.5`}>
           {eyebrow}
         </div>
       )}
@@ -21,7 +24,7 @@ export default function SectionHead({
         {title}
       </h2>
       {description && (
-        <p className="text-muted text-[17px] leading-relaxed mt-3.5">{description}</p>
+        <p className={`${mutedClass} text-[17px] leading-relaxed mt-3.5`}>{description}</p>
       )}
     </div>
   );
