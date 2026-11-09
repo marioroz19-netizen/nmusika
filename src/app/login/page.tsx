@@ -55,4 +55,23 @@ export default async function LoginPage({
               autoFocus
               required
               className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-text outline-none focus:border-accent transition-colors"
-              placeholder="•••••••• �����F�c���4W'&�"bb���6�74��S�'FW�B�6�FW�B�&VB�C#�6��G&6\;��6�'&V7F���L:��F��FR�VWf������Т�'WGF��G�S�'7V&֗B �6�74��S�&�B�"r�gV��&�V�FVB��r&r�66V�B��2FW�B�v��FRf��B�6V֖&��B��fW#�&r�66V�Bֆ�fW"G&�6�F����6���'2 ��V�G& ���'WGF�����f�&���6�74��S�&�B�bFW�B�6V�FW"FW�Bׇ2FW�B��WFVB#�vV"&�fFFR���U4��(	B66W6�&W7G&��v�F�������F�c���F�c�����
+              placeholder="********"
+            />
+          </div>
+          {hasError && (
+            <p className="text-sm text-red-400">Contraseña incorrecta. Inténtalo de nuevo.</p>
+          )}
+          <button
+            type="submit"
+            className="mt-2 w-full rounded-lg bg-accent py-3 text-white font-semibold hover:bg-accent-hover transition-colors"
+          >
+            Entrar
+          </button>
+        </form>
+        <p className="mt-6 text-center text-xs text-muted">
+          Web privada de N.MUSIKA — acceso restringido.
+        </p>
+      </div>
+    </div>
+  );
+}
