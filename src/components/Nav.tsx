@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Magnetic from "./Magnetic";
 
 const LINKS = [
   { href: "/", label: "Inicio" },
@@ -35,8 +36,10 @@ export default function Nav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[13px] transition-colors duration-200 ${
-                    active ? "text-text" : "text-muted hover:text-text"
+                  className={`relative pb-0.5 text-[13px] transition-colors duration-200 after:absolute after:left-0 after:bottom-0 after:h-px after:bg-text after:transition-[right] after:duration-300 after:ease-out ${
+                    active
+                      ? "text-text after:right-0"
+                      : "text-muted hover:text-text after:right-full hover:after:right-0"
                   }`}
                 >
                   {link.label}
@@ -45,12 +48,14 @@ export default function Nav() {
             })}
           </div>
 
-          <Link
-            href="/contacto"
-            className="justify-self-end text-[13px] font-semibold bg-accent text-white px-[18px] py-[9px] rounded-full hover:bg-accent-hover transition-colors"
-          >
-            Contacto
-          </Link>
+          <Magnetic className="justify-self-end" strength={0.25}>
+            <Link
+              href="/contacto"
+              className="inline-block text-[13px] font-semibold bg-accent text-white px-[18px] py-[9px] rounded-full hover:bg-accent-hover active:scale-95 transition-all duration-200"
+            >
+              Contacto
+            </Link>
+          </Magnetic>
         </nav>
       </div>
     </header>
