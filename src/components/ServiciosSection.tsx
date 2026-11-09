@@ -1,93 +1,60 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
-import ServiceIcon from "./ServiceIcon";
+import SectionHead from "./SectionHead";
 import type { Service } from "@/lib/content";
 
-// Sin bordes ni sombras: bloques planos de color sólido. Los dos primeros
-// servicios son protagonistas (grandes, arriba); el resto va debajo en
-// tarjetas más chicas y uniformes. Robusto a que Notion tenga más o menos
-// de 5 filas: siempre son "los dos primeros" + "el resto".
-const FEATURED_STYLES = [
-  { cardBg: "bg-accent", numberColor: "text-bg/15", iconTone: "inverse" as const },
-  { cardBg: "bg-accent2", numberColor: "text-bg/15", iconTone: "inverse" as const },
-];
-
-const REST_STYLES = [
-  { bar: "bg-accent", numberColor: "text-accent/10", iconTone: "primary" as const },
-  { bar: "bg-accent2", numberColor: "text-accent2/10", iconTone: "secondary" as const },
-  { bar: "bg-accent", numberColor: "text-accent/10", iconTone: "primary" as const },
-];
-
+// Jerarquía por tipografía, no por color de bloque: los dos primeros
+// servicios (Booking, Management) van más grandes arriba; el resto va
+// debajo en una fila más chica. Un único azul, reservado para los enlaces.
 export default function ServiciosSection({ services }: { services: Service[] }) {
   const featured = services.slice(0, 2);
   const rest = services.slice(2);
 
   return (
-    <div id="servicios" className="py-24 scroll-mt-28">
-      {/* Protagonistas: Booking y Management, en grande */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
-        {featured.map((service, i) => {
-          const { cardBg, numberColor, iconTone } = FEATURED_STYLES[i % FEATURED_STYLES.length];
-          return (
+    <section id="servicios" className="bg-surface scroll-mt-[52px]">
+      <div className="max-w-[1100px] mx-auto px-6 py-[120px] sm:py-[160px]">
+        <Reveal>
+          <SectionHead eyebrow="Servicios" title="Lo que hacemos por cada proyecto." />
+        </Reveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-14">
+          {featured.map((service) => (
             <Reveal key={service.name}>
-              <div
-                className={`relative h-full min-h-[340px] rounded-none ${cardBg} text-bg p-8 sm:p-10 overflow-hidden flex flex-col transition-transform duration-150 ease-out hover:-translate-y-1`}
+              <h3 className="text-[clamp(24px,3.4vw,32px)] font-semibold tracking-[-0.01em] leading-[1.1]">
+                {service.name}
+              </h3>
+              <p className="mt-3.5 text-[16px] leading-relaxed text-muted max-w-[38ch]">
+                {service.description}
+              </p>
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-1 mt-4 text-[15px] font-medium text-accent hover:underline"
               >
-                <span
-                  className={`pointer-events-none absolute -right-4 -top-10 font-black ${numberColor} select-none leading-none text-[190px]`}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                <div className="relative flex items-center justify-between mb-auto">
-                  <ServiceIcon name={service.name} size="lg" tone={iconTone} />
-                </div>
-
-                <div className="relative mt-8">
-                  <h3 className="font-extrabold uppercase tracking-tight leading-[0.92] mb-3 text-[clamp(30px,9vw,60px)]">
-                    {service.name}
-                  </h3>
-                  <p className="text-bg/70 leading-relaxed text-[16px] max-w-sm">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
+                Más información <span aria-hidden="true">›</span>
+              </Link>
             </Reveal>
-          );
-        })}
-      </div>
+          ))}
+        </div>
 
-      {/* El resto, más chico y uniforme */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-        {rest.map((service, i) => {
-          const { bar, numberColor, iconTone } = REST_STYLES[i % REST_STYLES.length];
-          return (
-            <Reveal key={service.name}>
-              <div className="relative h-full min-h-[220px] rounded-none bg-surface text-text p-6 overflow-hidden flex flex-col transition-transform duration-150 ease-out hover:-translate-y-1">
-                <div className={`absolute top-0 left-0 w-full h-1.5 ${bar}`} />
-
-                <span
-                  className={`pointer-events-none absolute -right-2 -top-6 font-black ${numberColor} select-none leading-none text-[90px]`}
+        {rest.length > 0 && (
+          <div className="mt-24 pt-14 border-t border-border grid grid-cols-1 sm:grid-cols-3 gap-x-10 gap-y-12">
+            {rest.map((service) => (
+              <Reveal key={service.name}>
+                <h3 className="text-[20px] font-semibold tracking-[-0.005em]">{service.name}</h3>
+                <p className="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+                  {service.description}
+                </p>
+                <Link
+                  href="/contacto"
+                  className="inline-flex items-center gap-1 mt-3 text-[14px] font-medium text-accent hover:underline"
                 >
-                  {String(i + 3).padStart(2, "0")}
-                </span>
-
-                <div className="relative flex items-center justify-between mb-auto">
-                  <ServiceIcon name={service.name} size="md" tone={iconTone} />
-                </div>
-
-                <div className="relative mt-6">
-                  <h3 className="font-extrabold uppercase tracking-tight leading-[0.95] mb-2 text-[21px]">
-                    {service.name}
-                  </h3>
-                  <p className="text-muted leading-relaxed text-[13.5px] line-clamp-3">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
+                  Más información <span aria-hidden="true">›</span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </section>
   );
 }
