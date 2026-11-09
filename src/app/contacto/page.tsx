@@ -22,9 +22,9 @@ export default async function ContactoPage() {
   ];
 
   return (
-    <div className="max-w-[1180px] mx-auto px-6 pt-40 pb-24 text-center">
+    <div className="max-w-[1100px] mx-auto px-6 pt-24 sm:pt-32 pb-24 sm:pb-32 text-center">
       <Reveal>
-        <SectionHead pill="Contacto" title={contact.closingText} />
+        <SectionHead eyebrow="Contacto" title={contact.closingText} align="center" />
       </Reveal>
 
       <Reveal>
