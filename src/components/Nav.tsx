@@ -12,38 +12,31 @@ const LINKS = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-20">
-      <div className="max-w-[1180px] mx-auto px-6">
-        <nav className="grid grid-cols-[1fr_auto_1fr] items-center py-7">
-          <div className="justify-self-start">
-            {isHome ? (
-              <span className="shrink-0" aria-hidden="true" />
-            ) : (
-              <Link href="/" className="shrink-0">
-                <Image
-                  src="/brand/logo-white.png"
-                  alt="N.MUSIKA"
-                  width={1616}
-                  height={240}
-                  priority
-                  className="h-[18px] w-auto opacity-90 hover:opacity-100 transition-opacity"
-                />
-              </Link>
-            )}
-          </div>
+    <header className="sticky top-0 z-20 bg-bg/70 backdrop-blur-xl backdrop-saturate-[1.8] border-b border-border">
+      <div className="max-w-[1100px] mx-auto px-6">
+        <nav className="grid grid-cols-[1fr_auto_1fr] items-center h-[52px]">
+          <Link href="/" className="justify-self-start shrink-0">
+            <Image
+              src="/brand/logo-white.png"
+              alt="N.MUSIKA"
+              width={1616}
+              height={240}
+              priority
+              className="h-[16px] w-auto opacity-90 hover:opacity-100 transition-opacity"
+            />
+          </Link>
 
-          <div className="hidden sm:flex gap-7 justify-self-center">
+          <div className="hidden sm:flex gap-8 justify-self-center">
             {LINKS.map((link) => {
               const active = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[13px] tracking-wide transition-all duration-200 hover:text-text hover:scale-110 ${
-                    active ? "text-text font-bold" : "text-muted font-medium"
+                  className={`text-[13px] transition-colors duration-200 ${
+                    active ? "text-text" : "text-muted hover:text-text"
                   }`}
                 >
                   {link.label}
@@ -54,7 +47,7 @@ export default function Nav() {
 
           <Link
             href="/contacto"
-            className="justify-self-end text-[13px] font-bold bg-text text-bg px-5 py-2.5 rounded-full"
+            className="justify-self-end text-[13px] font-semibold bg-accent text-white px-[18px] py-[9px] rounded-full hover:bg-accent-hover transition-colors"
           >
             Contacto
           </Link>
