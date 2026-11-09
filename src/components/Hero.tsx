@@ -1,78 +1,48 @@
-import Image from "next/image";
 import type { hero as HeroContent } from "@/lib/content";
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
-    <section className="relative min-h-screen text-center overflow-hidden w-full">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover opacity-[0.14]"
-          style={{ transform: "scale(1.08)" }}
+    <section className="bg-bg">
+      <div className="max-w-[1100px] mx-auto px-6 pt-[120px] pb-[100px] sm:pt-[160px] sm:pb-[120px] text-center">
+        <p
+          className="fade-up text-[12px] font-semibold tracking-[0.14em] uppercase text-muted"
+          style={{ "--d": "0s" } as React.CSSProperties}
         >
-          <source src="/video/hero-bg.mp4" type="video/mp4" />
-        </video>
-      </div>
+          N·MUSIKA
+        </p>
 
-      <div className="absolute inset-0 max-w-[1180px] mx-auto px-6">
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(620px,78vw)] opacity-0"
-          style={{
-            animation: "heroLogoIn 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-            filter: "drop-shadow(0 0 60px rgba(61,139,255,0.35))",
-          }}
+        <h1
+          className="fade-up mt-5 font-semibold tracking-[-0.02em] leading-[1.02] text-[clamp(42px,8vw,96px)]"
+          style={{ "--d": "0.1s" } as React.CSSProperties}
         >
-          <Image
-            src="/brand/logo-white.png"
-            alt="N.MUSIKA"
-            width={620}
-            height={207}
-            priority
-            className="w-full h-auto"
-          />
-        </div>
+          {hero.headline}
+        </h1>
+
+        <p
+          className="fade-up mt-6 text-[19px] leading-relaxed text-muted max-w-[520px] mx-auto"
+          style={{ "--d": "0.2s" } as React.CSSProperties}
+        >
+          Management y booking musical en Pamplona / Iruña.
+        </p>
 
         <div
-          className="absolute left-1/2 w-full max-w-[460px] px-6 opacity-0"
-          style={{
-            top: "calc(50% + 74px)",
-            transform: "translate(-50%, 10px)",
-            animation: "heroTextIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-            animationDelay: "1.2s",
-          }}
+          className="fade-up mt-[72px] inline-flex flex-col items-center gap-2.5 text-[11px] tracking-[0.16em] uppercase text-muted"
+          style={{ "--d": "0.32s" } as React.CSSProperties}
         >
-          <h1 className="text-[clamp(14px,1.4vw,17px)] font-normal tracking-[0.08em]">
-            {hero.headline}
-          </h1>
-        </div>
-
-        <div
-          className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-[11px] uppercase tracking-[0.2em] text-muted"
-          style={{ top: "calc(50% + 300px)" }}
-        >
-          <span
-            className="opacity-0"
-            style={{
-              transform: "translate(0,-20px)",
-              animation: "cueIn 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
-              animationDelay: "2.4s",
-            }}
+          <span>{hero.cue}</span>
+          <svg
+            className="cue-arrow"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
-            {hero.cue}
-          </span>
-          <span
-            className="text-[15px] opacity-0"
-            style={{
-              animation:
-                "cueIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards 3.1s, arrowBounce 2.2s ease-in-out infinite 4.6s",
-            }}
-          >
-            ↓
-          </span>
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </div>
       </div>
     </section>
