@@ -94,7 +94,7 @@ export const team: TeamMember[] = [
 ];
 
 export const contact = {
-  email: "marioroz.prod@gmail.com",
+  email: "nmusika.management@outlook.com",
   phone: "607582437",
   instagram: "@mariorozz",
   location: "Pamplona / Iruña",
