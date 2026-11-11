@@ -129,7 +129,7 @@ body {
   animation-play-state: paused;
 }
 .roster-name {
-  font-size: calc(var(--banner-h) * 0.5);
+  font-size: calc(var(--banner-h) * 0.42);
   font-weight: 400;
   letter-spacing: -0.02em;
   text-transform: uppercase;
