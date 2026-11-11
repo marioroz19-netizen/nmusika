@@ -8,7 +8,7 @@ import ScrollTop from "@/components/ScrollTop";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const display = Unbounded({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400"],
   variable: "--font-unbounded",
   display: "swap",
 });
