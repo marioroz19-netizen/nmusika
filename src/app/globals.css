@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 :root {
+  /* Paleta "Cuero envejecido" (vintage): negro como color principal,
+     acento en marrón de cuero curtido, blancos cálidos en vez de fríos. */
   --color-bg: #000000;
-  --color-surface: #161617;
-  --color-border: rgba(245, 245, 247, 0.12);
-  --color-accent: #3d8bff;
-  --color-accent-hover: #5a9cff;
-  --color-text: #f5f5f7;
-  --color-muted: #86868b;
+  --color-surface: #17120d;
+  --color-border: rgba(239, 232, 221, 0.12);
+  --color-accent: #a0603a;
+  --color-accent-hover: #b4714a;
+  --color-text: #efe8dd;
+  --color-muted: #9c9388;
 
-  --color-bg-invert: #ffffff;
-  --color-text-invert: #0a0a0a;
-  --color-muted-invert: #6e6e73;
-  --color-border-invert: rgba(10, 10, 10, 0.1);
-  --color-accent-invert: #0b5fd8;
-  --color-accent-invert-hover: #0a4fb3;
+  --color-bg-invert: #f3ede2;
+  --color-text-invert: #1a1512;
+  --color-muted-invert: #786a5c;
+  --color-border-invert: rgba(26, 21, 18, 0.12);
+  --color-accent-invert: #7a4521;
+  --color-accent-invert-hover: #603518;
 }
 
 @theme inline {
