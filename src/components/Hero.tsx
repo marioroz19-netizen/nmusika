@@ -2,6 +2,15 @@ import Link from "next/link";
 import HeroVideo from "./HeroVideo";
 import type { hero as HeroContent } from "@/lib/content";
 
+const LEMA = "We love music, we build projects.";
+
+// Retardo "aleatorio" pero fijo para cada letra (igual en servidor y
+// navegador): las letras aparecen desordenadas a lo largo de ~8 segundos.
+function charDelay(i: number) {
+  const x = Math.sin(i * 12.9898 + 78.233) * 43758.5453;
+  return 0.6 + (x - Math.floor(x)) * 6.4;
+}
+
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
     <section className="relative isolate bg-bg overflow-hidden">
@@ -24,8 +33,24 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
           N·MUSIKA
         </h1>
 
-        <p className="pen-write mt-5 sm:mt-7 font-script text-[22px] sm:text-[34px] leading-[1.3] text-text/85 px-3">
-          We love music, we build projects.
+        <p
+          className="mt-5 sm:mt-6 text-[15px] sm:text-[19px] leading-relaxed text-muted max-w-[480px]"
+          aria-label={LEMA}
+        >
+          {LEMA.split(" ").map((word, w) => (
+            <span key={w} className="inline-block whitespace-nowrap" aria-hidden="true">
+              {[...word].map((ch, c) => (
+                <span
+                  key={c}
+                  className="lema-char"
+                  style={{ "--cd": `${charDelay(w * 31 + c)}s` } as React.CSSProperties}
+                >
+                  {ch}
+                </span>
+              ))}
+              {w < LEMA.split(" ").length - 1 ? "\u00a0" : null}
+            </span>
+          ))}
         </p>
       </div>
 
