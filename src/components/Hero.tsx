@@ -4,13 +4,33 @@ import Magnetic from "./Magnetic";
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
-    <section className="bg-bg">
+    <section className="relative bg-bg overflow-hidden">
+      {/* Vídeo de fondo muy opaco, solo como textura ambiental detrás del
+          texto — mismo recurso que en versiones anteriores del Hero, pero
+          adaptado a la banda full-bleed de la dirección Apple/vintage. */}
+      <div
+        className="absolute inset-0 -z-10 overflow-hidden"
+        style={{ left: "50%", width: "100vw", transform: "translateX(-50%)" }}
+        aria-hidden="true"
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-[0.16]"
+        >
+          <source src="/video/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       <div className="max-w-[1100px] mx-auto px-6 min-h-[82vh] flex flex-col items-center justify-center text-center py-20">
         <div
           className="fade-up inline-flex items-center gap-2 rounded-full border border-border pl-2 pr-4 py-1.5 text-[12px] font-medium tracking-[0.01em] text-muted"
           style={{ "--d": "0s" } as React.CSSProperties}
         >
-          <span className="w-[7px] h-[7px] rounded-full bg-accent shrink-0" aria-hidden="true" />
+          <span className="w-[7px] h-[7px] rounded-full bg-accent2 shrink-0" aria-hidden="true" />
           {hero.headline}
         </div>
 
