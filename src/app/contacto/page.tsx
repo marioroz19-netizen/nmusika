@@ -38,7 +38,7 @@ export default async function ContactoPage() {
                 {row.label}
               </span>
               {row.href ? (
-                <a href={row.href} className="text-[15px] font-semibold hover:text-accent transition-colors">
+                <a href={row.href} className="text-[15px] font-semibold hover:text-accent2 transition-colors">
                   {row.value}
                 </a>
               ) : (
