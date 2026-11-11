@@ -167,11 +167,14 @@ export async function getRoster(): Promise<Artist[]> {
     return pages.map((page) => {
       const name = titleCase(titleOf(page));
       const genres = multiSelectOf(page, "Etiquetas");
+      const slug = slugify(name);
+      // Si en Notion no hay foto de Drive, usa la foto local de /public/roster.
+      const local = fallback.roster.find((a) => slug === a.slug || slug.startsWith(`${a.slug}-`))?.photo;
       return {
-        slug: slugify(name),
+        slug,
         name,
         genre: genres.length ? genres.join(", ") : "Roster N.MUSIKA",
-        photo: driveImageUrl(urlOf(page, "Foto (Drive)")),
+        photo: driveImageUrl(urlOf(page, "Foto (Drive)")) ?? local,
       };
     });
   } catch (err) {
