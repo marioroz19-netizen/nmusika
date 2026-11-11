@@ -44,7 +44,7 @@
   --color-accent2-invert: var(--color-accent2-invert);
   --color-accent2-invert-hover: var(--color-accent2-invert-hover);
   --font-display: var(--font-unbounded), sans-serif;
-  --font-script: var(--font-allura), cursive;
+  --font-script: var(--font-pinyon), cursive;
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
@@ -157,7 +157,7 @@ body {
 /* Lema escrito "a pluma": se descubre de izquierda a derecha. */
 .pen-write {
   clip-path: inset(-0.4em 100% -0.4em 0);
-  animation: penWrite 2.6s cubic-bezier(0.55, 0.1, 0.35, 1) 0.7s forwards;
+  animation: penWrite 4.8s cubic-bezier(0.45, 0.05, 0.35, 1) 0.8s forwards;
 }
 @keyframes penWrite {
   to {
