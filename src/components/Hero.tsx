@@ -36,12 +36,14 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
           className="fade-up mt-6 text-[19px] leading-relaxed text-muted max-w-[480px]"
           style={{ "--d": "0.22s" } as React.CSSProperties}
         >
-          Management y booking musical en Pamplona / Iruña.
+          We love music, we build projects.
         </p>
+      </div>
 
+      <div className="absolute inset-x-0 bottom-10 flex justify-center">
         <Link
           href="/nosotros"
-          className="fade-up mt-12 inline-flex flex-col items-center gap-2 text-[12px] tracking-[0.18em] uppercase text-muted hover:text-text transition-colors duration-300"
+          className="fade-up inline-flex flex-col items-center gap-2 text-[12px] tracking-[0.18em] uppercase text-muted hover:text-text transition-colors duration-300"
           style={{ "--d": "0.34s" } as React.CSSProperties}
         >
           <span>{hero.cue}</span>
