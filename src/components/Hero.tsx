@@ -1,21 +1,29 @@
 import Link from "next/link";
 import HeroVideo from "./HeroVideo";
 import IntroGate from "./IntroGate";
+import RosterTicker from "./RosterTicker";
+import type { Artist } from "@/lib/content";
 import type { hero as HeroContent } from "@/lib/content";
 
 const LEMA = "We love music, we build projects.";
 
 // Retardo "aleatorio" pero fijo para cada letra (igual en servidor y
-// navegador): las letras aparecen desordenadas en ~5 segundos y algunas
+// navegador): las letras aparecen desordenadas en ~4 segundos y algunas
 // ya empiezan a verse desde el primer instante (retardo negativo).
 function charDelay(i: number) {
   const x = Math.sin(i * 12.9898 + 78.233) * 43758.5453;
-  return -0.5 + (x - Math.floor(x)) * 4.1;
+  return -0.5 + (x - Math.floor(x)) * 3.1;
 }
 
-export default function Hero({ hero }: { hero: typeof HeroContent }) {
+export default function Hero({
+  hero,
+  roster = [],
+}: {
+  hero: typeof HeroContent;
+  roster?: Artist[];
+}) {
   return (
-    <section className="hero-section relative isolate bg-bg overflow-hidden">
+    <section className="hero-section relative isolate bg-bg overflow-hidden h-[calc(100svh-64px)] min-h-[480px]">
       <IntroGate />
       {/* Vídeo de fondo muy opaco, solo como textura ambiental detrás del
           texto — mismo recurso que en versiones anteriores del Hero, pero
@@ -28,7 +36,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         <HeroVideo />
       </div>
 
-      <div className="max-w-[1100px] mx-auto px-6 min-h-[82vh] flex flex-col items-center justify-center text-center py-20">
+      <div className="max-w-[1100px] mx-auto px-6 h-full flex flex-col items-center justify-center text-center pb-[clamp(52px,6.5vw,84px)]">
         <h1
           className="fade-up font-display font-normal tracking-[-0.02em] leading-[0.95] text-[14vw] sm:text-[clamp(38px,10.5vw,128px)]"
           style={{ "--d": "0.1s" } as React.CSSProperties}
@@ -57,7 +65,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         </p>
       </div>
 
-      <div className="intro-hide absolute inset-x-0 bottom-10 flex justify-center">
+      <div className="intro-hide absolute inset-x-0 bottom-[calc(clamp(52px,6.5vw,84px)+20px)] flex justify-center">
         <Link
           href="/nosotros"
           className="fade-up inline-flex flex-col items-center gap-2 text-[12px] tracking-[0.18em] uppercase text-muted hover:text-text transition-colors duration-300"
@@ -79,6 +87,10 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
             <path d="M6 9l6 6 6-6" />
           </svg>
         </Link>
+      </div>
+
+      <div className="intro-hide absolute inset-x-0 bottom-0">
+        <RosterTicker artists={roster} />
       </div>
     </section>
   );
