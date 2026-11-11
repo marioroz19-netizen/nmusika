@@ -10,7 +10,7 @@ export default function RosterTicker({ artists }: { artists: Artist[] }) {
   return (
     <div className="bg-bg border-y border-border overflow-hidden">
       <div className="flex items-center gap-7 py-3.5">
-        <span className="shrink-0 pl-6 text-[11px] font-semibold tracking-[0.14em] uppercase text-accent">
+        <span className="shrink-0 pl-6 text-[11px] font-semibold tracking-[0.14em] uppercase text-accent2">
           Roster
         </span>
         <div className="ticker-mask flex-1 min-w-0 overflow-hidden">
