@@ -9,7 +9,7 @@ import { Artist } from "@/lib/content";
 // posición y duración) se reutiliza como máscara para desvanecer la foto
 // por debajo — así ambos casos (con y sin foto) se sienten como una única
 // animación, solo que una además deja asomar la imagen.
-const GRADIENT = "linear-gradient(120deg, rgba(61,139,255,0.14), rgba(61,139,255,0) 60%)";
+const GRADIENT = "linear-gradient(120deg, rgba(58,90,122,0.28), rgba(58,90,122,0) 60%)";
 const MASK = "linear-gradient(120deg, black, transparent 60%)";
 
 // Encuadre manual por artista para que la franja (muy ancha y baja) recorte
@@ -74,13 +74,13 @@ export default function RosterManifest({ artists }: { artists: Artist[] }) {
                 />
                 <span
                   className="absolute inset-0"
-                  style={{ background: "rgba(61,139,255,0.55)", mixBlendMode: "color" }}
+                  style={{ background: "rgba(58,90,122,0.68)", mixBlendMode: "color" }}
                 />
               </span>
             )}
             <span className="absolute inset-0" style={{ background: GRADIENT }} />
           </span>
-          <span className="relative text-[clamp(24px,4.6vw,42px)] font-semibold tracking-[-0.015em] transition-colors duration-300 group-hover:text-accent-hover">
+          <span className="relative text-[clamp(24px,4.6vw,42px)] font-semibold tracking-[-0.015em] transition-colors duration-300 group-hover:text-accent2-hover">
             {artist.name}
           </span>
           <span className="relative flex items-center gap-4 shrink-0">
@@ -89,7 +89,7 @@ export default function RosterManifest({ artists }: { artists: Artist[] }) {
             </span>
             <span
               aria-hidden="true"
-              className="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full border border-border shrink-0 transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:-rotate-45"
+              className="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full border border-border shrink-0 transition-all duration-300 group-hover:border-accent2 group-hover:bg-accent2 group-hover:-rotate-45"
             >
               <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                 <path
