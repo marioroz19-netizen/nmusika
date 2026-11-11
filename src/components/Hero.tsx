@@ -35,10 +35,11 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         </div>
 
         <h1
+          aria-label="N.MUSIKA"
           className="fade-up mt-7 font-semibold tracking-[-0.03em] leading-[0.95] text-[clamp(48px,13.5vw,152px)]"
           style={{ "--d": "0.1s" } as React.CSSProperties}
         >
-          N·MUSIKA
+          N·
         </h1>
 
         <p
@@ -82,26 +83,6 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
               Hablemos
             </Link>
           </Magnetic>
-        </div>
-
-        <div
-          className="fade-up mt-16 inline-flex flex-col items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-muted/70"
-          style={{ "--d": "0.46s" } as React.CSSProperties}
-        >
-          <span>{hero.cue}</span>
-          <svg
-            className="cue-arrow"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M6 9l6 6 6-6" />
-          </svg>
         </div>
       </div>
     </section>
