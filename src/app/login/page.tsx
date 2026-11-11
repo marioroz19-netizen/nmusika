@@ -1,7 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-
-const COOKIE_NAME = "nmusika_auth";
+import { COOKIE_NAME, hashPassword } from "@/lib/auth";
 
 async function login(formData: FormData) {
   "use server";
@@ -11,7 +10,7 @@ async function login(formData: FormData) {
 
   if (sitePassword && password === sitePassword) {
     const cookieStore = await cookies();
-    cookieStore.set(COOKIE_NAME, sitePassword, {
+    cookieStore.set(COOKIE_NAME, await hashPassword(sitePassword), {
       httpOnly: true,
       secure: true,
       sameSite: "lax",
@@ -21,6 +20,10 @@ async function login(formData: FormData) {
     redirect(from.startsWith("/") ? from : "/");
   }
 
+  // Pequeño retardo ante contraseña incorrecta: no sustituye a un límite de
+  // intentos real, pero encarece automatizar pruebas de fuerza bruta contra
+  // este formulario.
+  await new Promise((resolve) => setTimeout(resolve, 800));
   redirect(`/login?error=1&from=${encodeURIComponent(from)}`);
 }
 
