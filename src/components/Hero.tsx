@@ -27,7 +27,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
 
       <div className="max-w-[1100px] mx-auto px-6 min-h-[82vh] flex flex-col items-center justify-center text-center py-20">
         <h1
-          className="fade-up font-semibold tracking-[-0.03em] leading-[0.95] text-[clamp(48px,13.5vw,152px)]"
+          className="fade-up font-display font-normal tracking-[-0.02em] leading-[0.95] text-[clamp(38px,10.5vw,128px)]"
           style={{ "--d": "0.1s" } as React.CSSProperties}
         >
           N·MUSIKA
