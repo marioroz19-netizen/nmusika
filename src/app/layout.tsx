@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollTop from "@/components/ScrollTop";
 
 export const metadata: Metadata = {
   title: "N.MUSIKA — Booking & Management",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main className="flex-1 relative z-10">{children}</main>
         <Footer />
+        <ScrollTop />
       </body>
     </html>
   );
