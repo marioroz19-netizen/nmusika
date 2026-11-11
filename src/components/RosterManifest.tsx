@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Artist } from "@/lib/content";
 
 // Listado editorial para el roster de la Home (distinto del grid con fotos
@@ -43,9 +44,10 @@ export default function RosterManifest({ artists }: { artists: Artist[] }) {
   return (
     <div className="border-t border-border">
       {artists.map((artist) => (
-        <div
+        <Link
           key={artist.slug}
-          className="group relative flex items-baseline justify-between gap-5 flex-wrap py-7 sm:py-9 border-b border-border overflow-hidden"
+          href={`/roster#${artist.slug}`}
+          className="group relative flex items-center justify-between gap-5 flex-wrap py-7 sm:py-9 border-b border-border overflow-hidden"
         >
           <span
             aria-hidden="true"
@@ -81,10 +83,26 @@ export default function RosterManifest({ artists }: { artists: Artist[] }) {
           <span className="relative text-[clamp(24px,4.6vw,42px)] font-semibold tracking-[-0.015em] transition-colors duration-300 group-hover:text-accent-hover">
             {artist.name}
           </span>
-          <span className="relative text-[11px] font-medium tracking-[0.1em] uppercase text-muted">
-            {artist.genre}
+          <span className="relative flex items-center gap-4 shrink-0">
+            <span className="text-[11px] font-medium tracking-[0.1em] uppercase text-muted">
+              {artist.genre}
+            </span>
+            <span
+              aria-hidden="true"
+              className="inline-flex items-center justify-center w-[36px] h-[36px] rounded-full border border-border shrink-0 transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:-rotate-45"
+            >
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 13L13 3M13 3H6M13 3v7"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
           </span>
-        </div>
+        </Link>
       ))}
     </div>
   );
