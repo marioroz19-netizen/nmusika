@@ -24,7 +24,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
           N·MUSIKA
         </h1>
 
-        <p className="pen-write mt-5 sm:mt-7 font-script text-[24px] sm:text-[38px] leading-[1.25] text-text/85 px-3">
+        <p className="pen-write mt-5 sm:mt-7 font-script text-[22px] sm:text-[34px] leading-[1.3] text-text/85 px-3">
           We love music, we build projects.
         </p>
       </div>
