@@ -20,7 +20,7 @@ export default function Nav() {
           <Link
             href="/"
             aria-label="N.MUSIKA — Inicio"
-            className="justify-self-start shrink-0 text-[24px] leading-none font-semibold tracking-[-0.03em] text-text opacity-90 hover:opacity-100 transition-opacity"
+            className="justify-self-start shrink-0 font-display text-[22px] leading-none font-normal tracking-[-0.02em] text-text opacity-90 hover:opacity-100 transition-opacity"
           >
             N<span className="text-accent2">·</span>
           </Link>
