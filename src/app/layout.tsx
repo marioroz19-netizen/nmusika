@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Allura, Inter, Unbounded } from "next/font/google";
+import { Inter, Pinyon_Script, Unbounded } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -12,10 +12,10 @@ const display = Unbounded({
   variable: "--font-unbounded",
   display: "swap",
 });
-const script = Allura({
+const script = Pinyon_Script({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-allura",
+  variable: "--font-pinyon",
   display: "swap",
 });
 
