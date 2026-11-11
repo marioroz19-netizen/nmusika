@@ -26,21 +26,26 @@ export default function ServiciosSection({ services }: { services: Service[] }) 
                 i > 0 ? "border-t sm:border-t-0 sm:border-l border-border-invert" : ""
               }`}
             >
-              <h3 className="flex items-center gap-2.5 text-[clamp(28px,4.6vw,46px)] font-semibold tracking-[-0.02em] leading-[1.05]">
+              <h3 className="flex items-center gap-4 text-[clamp(28px,4.6vw,46px)] font-semibold tracking-[-0.02em] leading-[1.05]">
                 {service.name}
-                <svg
-                  className="w-[0.5em] h-[0.5em] shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                  viewBox="0 0 16 16"
-                  fill="none"
+                <span
+                  aria-hidden="true"
+                  className="inline-flex items-center justify-center w-[0.85em] h-[0.85em] shrink-0 rounded-full border border-border-invert transition-all duration-300 group-hover:border-accent-invert group-hover:bg-accent-invert group-hover:text-white"
                 >
-                  <path
-                    d="M3 13L13 3M13 3H6M13 3v7"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                  <svg
+                    className="w-[0.42em] h-[0.42em] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M3 13L13 3M13 3H6M13 3v7"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
               </h3>
               <p className="mt-3.5 text-[16px] leading-relaxed text-muted-invert max-w-[38ch]">
                 {service.description}
@@ -66,9 +71,17 @@ export default function ServiciosSection({ services }: { services: Service[] }) 
                   {service.name}
                   <span
                     aria-hidden="true"
-                    className="text-muted-invert transition-transform duration-300 group-hover:translate-x-1"
+                    className="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full border border-border-invert shrink-0 transition-all duration-300 group-hover:border-text-invert group-hover:bg-text-invert group-hover:text-bg"
                   >
-                    →
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M3 13L13 3M13 3H6M13 3v7"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </span>
                 </Link>
               </Reveal>
