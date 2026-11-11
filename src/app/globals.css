@@ -44,7 +44,6 @@
   --color-accent2-invert: var(--color-accent2-invert);
   --color-accent2-invert-hover: var(--color-accent2-invert-hover);
   --font-display: var(--font-unbounded), sans-serif;
-  --font-script: var(--font-pinyon), cursive;
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
@@ -154,14 +153,20 @@ body {
   }
 }
 
-/* Lema escrito "a pluma": se descubre de izquierda a derecha. */
-.pen-write {
-  clip-path: inset(-0.4em 100% -0.4em 0);
-  animation: penWrite 4.8s cubic-bezier(0.45, 0.05, 0.35, 1) 0.8s forwards;
+/* Lema: cada letra aparece con un fundido, en orden aleatorio (~8 s). */
+.lema-char {
+  opacity: 0;
+  animation: charIn 1.6s ease-out forwards;
+  animation-delay: var(--cd, 0s);
 }
-@keyframes penWrite {
+@keyframes charIn {
+  from {
+    opacity: 0;
+    filter: blur(3px);
+  }
   to {
-    clip-path: inset(-0.4em -0.2em -0.4em 0);
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
@@ -173,9 +178,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pen-write {
+  .lema-char {
     animation: none;
-    clip-path: none;
+    opacity: 1;
   }
   .reveal {
     opacity: 1;
