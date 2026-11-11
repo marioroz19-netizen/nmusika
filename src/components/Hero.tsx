@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroVideo from "./HeroVideo";
+import IntroGate from "./IntroGate";
 import type { hero as HeroContent } from "@/lib/content";
 
 const LEMA = "We love music, we build projects.";
@@ -13,7 +14,8 @@ function charDelay(i: number) {
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
-    <section className="relative isolate bg-bg overflow-hidden">
+    <section className="hero-section relative isolate bg-bg overflow-hidden">
+      <IntroGate />
       {/* Vídeo de fondo muy opaco, solo como textura ambiental detrás del
           texto — mismo recurso que en versiones anteriores del Hero, pero
           adaptado a la banda full-bleed de la dirección Apple/vintage. */}
@@ -54,7 +56,7 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         </p>
       </div>
 
-      <div className="absolute inset-x-0 bottom-10 flex justify-center">
+      <div className="intro-hide absolute inset-x-0 bottom-10 flex justify-center">
         <Link
           href="/nosotros"
           className="fade-up inline-flex flex-col items-center gap-2 text-[12px] tracking-[0.18em] uppercase text-muted hover:text-text transition-colors duration-300"
