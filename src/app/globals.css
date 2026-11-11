@@ -170,6 +170,21 @@ body {
   }
 }
 
+/* Intro de la portada (ver IntroGate): mientras dura, solo se ve el Hero
+   (N·MUSIKA y el lema); el resto aparece después con un fundido. */
+body:has(#intro-gate) :is(header, footer, .intro-hide),
+body:has(#intro-gate) main > :not(.hero-section) {
+  transition: opacity 1.4s ease;
+}
+body:has(#intro-gate:not([data-done])) {
+  overflow: hidden;
+}
+body:has(#intro-gate:not([data-done])) :is(header, footer, .intro-hide),
+body:has(#intro-gate:not([data-done])) main > :not(.hero-section) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Nunca mostrar el botón de play nativo sobre el vídeo de fondo. */
 .hero-video::-webkit-media-controls,
 .hero-video::-webkit-media-controls-start-playback-button {
