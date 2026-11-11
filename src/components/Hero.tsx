@@ -4,7 +4,7 @@ import Magnetic from "./Magnetic";
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
-    <section className="relative bg-bg overflow-hidden">
+    <section className="relative isolate bg-bg overflow-hidden">
       {/* Vídeo de fondo muy opaco, solo como textura ambiental detrás del
           texto — mismo recurso que en versiones anteriores del Hero, pero
           adaptado a la banda full-bleed de la dirección Apple/vintage. */}
