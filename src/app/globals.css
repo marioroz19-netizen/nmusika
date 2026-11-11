@@ -129,13 +129,10 @@ body {
   animation-play-state: paused;
 }
 .roster-name {
-  font-size: calc(var(--banner-h) * 0.42);
+  font-size: calc(var(--banner-h) * 0.36);
   font-weight: 400;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  /* Unbounded no tiene cursiva: se inclina igual en todos los navegadores. */
-  display: inline-block;
-  transform: skewX(-12deg);
 }
 .roster-name--outline {
   color: #c08a5b;
