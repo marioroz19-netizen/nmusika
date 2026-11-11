@@ -2,7 +2,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import RosterManifest from "@/components/RosterManifest";
-import RosterTicker from "@/components/RosterTicker";
 import SectionHead from "@/components/SectionHead";
 import ServiciosSection from "@/components/ServiciosSection";
 import CTASection from "@/components/CTASection";
@@ -17,9 +16,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero hero={hero} />
-
-      <RosterTicker artists={roster} />
+      <Hero hero={hero} roster={roster} />
 
       <ServiciosSection services={services} />
 
