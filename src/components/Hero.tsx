@@ -35,11 +35,10 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         </div>
 
         <h1
-          aria-label="N.MUSIKA"
           className="fade-up mt-7 font-semibold tracking-[-0.03em] leading-[0.95] text-[clamp(48px,13.5vw,152px)]"
           style={{ "--d": "0.1s" } as React.CSSProperties}
         >
-          N·
+          N·MUSIKA
         </h1>
 
         <p
