@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { hero as HeroContent } from "@/lib/content";
-import Magnetic from "./Magnetic";
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
   return (
@@ -40,33 +39,27 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
           Management y booking musical en Pamplona / Iruña.
         </p>
 
-        <div
-          className="fade-up mt-10 flex flex-wrap items-center justify-center gap-3"
+        <Link
+          href="/nosotros"
+          className="fade-up mt-12 inline-flex flex-col items-center gap-2 text-[12px] tracking-[0.18em] uppercase text-muted hover:text-text transition-colors duration-300"
           style={{ "--d": "0.34s" } as React.CSSProperties}
         >
-          <Magnetic strength={0.2}>
-            <Link
-              href="/roster"
-              className="inline-flex items-center gap-2 bg-accent text-white font-semibold text-[14px] pl-[20px] pr-[8px] py-[8px] rounded-full hover:bg-accent-hover active:scale-95 transition-all duration-200"
-            >
-              Ver roster
-              <span
-                aria-hidden="true"
-                className="inline-flex items-center justify-center w-[26px] h-[26px] rounded-full bg-white/20"
-              >
-                <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3 13L13 3M13 3H6M13 3v7"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Link>
-          </Magnetic>
-        </div>
+          <span>{hero.cue}</span>
+          <svg
+            className="cue-arrow"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </Link>
       </div>
     </section>
   );
