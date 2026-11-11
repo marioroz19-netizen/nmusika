@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
+import { COOKIE_NAME, hashPassword } from "./lib/auth";
 
 // Puerta de contraseña muy simple para toda la web mientras esté en fase
 // privada. No requiere ningún servicio de pago: solo compara la contraseña
 // introducida con la variable de entorno SITE_PASSWORD y, si coincide, deja
-// una cookie firmada-por-valor-fijo válida 30 días.
+// una cookie con el hash de la contraseña (nunca la contraseña en sí),
+// válida 30 días.
 //
 // Si SITE_PASSWORD no está configurada, la web queda abierta (no rompe nada
 // por falta de variable) — así el despliegue nunca se bloquea a sí mismo.
 
-const COOKIE_NAME = "nmusika_auth";
-
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const sitePassword = process.env.SITE_PASSWORD;
 
   // Sin contraseña configurada: no protegemos nada.
@@ -19,7 +19,7 @@ export function proxy(request: NextRequest) {
   }
 
   const authCookie = request.cookies.get(COOKIE_NAME);
-  if (authCookie?.value === sitePassword) {
+  if (authCookie?.value === (await hashPassword(sitePassword))) {
     return NextResponse.next();
   }
 
