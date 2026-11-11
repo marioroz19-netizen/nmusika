@@ -10,7 +10,7 @@ export default function RosterTicker({ artists }: { artists: Artist[] }) {
   return (
     <section
       aria-label="Roster N.MUSIKA"
-      className="roster-banner relative bg-bg border-y border-accent/60 overflow-hidden"
+      className="roster-banner relative overflow-hidden"
     >
       <div className="ticker-mask overflow-hidden">
         <div className="ticker-track flex items-center w-max">
