@@ -2,13 +2,14 @@ import Image from "next/image";
 import { Artist } from "@/lib/content";
 
 // Degradados planos y muy sutiles para las tarjetas sin foto todavía —
-// nada de glow radial de color, solo variación tonal casi-negra.
+// nada de glow radial de color, solo variación tonal casi-negra con un
+// punto de calidez (cuero envejecido) en vez del tinte frío anterior.
 export const FALLBACK_GRADIENTS: [string, string][] = [
-  ["#1c2230", "#0a0d14"],
-  ["#201c22", "#0c0a0e"],
-  ["#1c201f", "#0a0c0b"],
-  ["#1e1c22", "#0b0a0e"],
-  ["#1c1e22", "#0a0b0e"],
+  ["#231a12", "#100b07"],
+  ["#1f1813", "#0d0906"],
+  ["#201911", "#0e0907"],
+  ["#1e1a12", "#0c0907"],
+  ["#1c1810", "#0b0806"],
 ];
 
 export default function RosterGrid({ artists }: { artists: Artist[] }) {
