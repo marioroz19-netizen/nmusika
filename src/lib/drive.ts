@@ -9,6 +9,7 @@ export function driveImageUrl(url: string | undefined, width = 1200): string | u
   if (!url) return undefined;
   const match = url.match(/\/file\/d\/([^/]+)/) ?? url.match(/[?&]id=([^&]+)/);
   const fileId = match?.[1];
-  if (!fileId) return url;
+  // Un enlace de carpeta de Drive no es una imagen: mejor sin foto que rota.
+  if (!fileId) return url.includes("drive.google.com") ? undefined : url;
   return `https://lh3.googleusercontent.com/d/${fileId}=w${width}`;
 }
