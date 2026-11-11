@@ -6,10 +6,11 @@ import type { hero as HeroContent } from "@/lib/content";
 const LEMA = "We love music, we build projects.";
 
 // Retardo "aleatorio" pero fijo para cada letra (igual en servidor y
-// navegador): las letras aparecen desordenadas a lo largo de ~8 segundos.
+// navegador): las letras aparecen desordenadas en ~5 segundos y algunas
+// ya empiezan a verse desde el primer instante (retardo negativo).
 function charDelay(i: number) {
   const x = Math.sin(i * 12.9898 + 78.233) * 43758.5453;
-  return 0.6 + (x - Math.floor(x)) * 6.4;
+  return -0.5 + (x - Math.floor(x)) * 4.1;
 }
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
