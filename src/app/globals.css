@@ -133,6 +133,9 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  /* Unbounded no tiene cursiva: se inclina igual en todos los navegadores. */
+  display: inline-block;
+  transform: skewX(-12deg);
 }
 .roster-name--outline {
   color: #c08a5b;
