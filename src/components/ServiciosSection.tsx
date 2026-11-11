@@ -30,13 +30,13 @@ export default function ServiciosSection({ services }: { services: Service[] }) 
                 {service.name}
                 <span
                   aria-hidden="true"
-                  className="inline-flex items-center justify-center w-[0.85em] h-[0.85em] shrink-0 rounded-full border border-border-invert transition-all duration-300 group-hover:border-accent-invert group-hover:bg-accent-invert group-hover:text-white"
+                  className="inline-flex items-center justify-center w-[0.85em] h-[0.85em] shrink-0 rounded-full border border-border-invert transition-all duration-300 group-hover:border-accent2-invert group-hover:bg-accent2-invert group-hover:text-white"
                 >
                   <svg
                     className="w-[0.42em] h-[0.42em] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     viewBox="0 0 16 16"
                     fill="none"
-                  >
+                >
                     <path
                       d="M3 13L13 3M13 3H6M13 3v7"
                       stroke="currentColor"
@@ -52,7 +52,7 @@ export default function ServiciosSection({ services }: { services: Service[] }) 
               </p>
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-1 mt-4 text-[15px] font-medium text-accent-invert hover:underline"
+                className="inline-flex items-center gap-1 mt-4 text-[15px] font-medium text-accent2-invert hover:underline"
               >
                 Más información <span aria-hidden="true">›</span>
               </Link>
