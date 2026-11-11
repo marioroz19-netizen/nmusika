@@ -44,28 +44,30 @@ export default function Nav() {
             })}
           </div>
 
-          <Magnetic className="justify-self-end" strength={0.25}>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold bg-accent text-white pl-[18px] pr-[7px] py-[7px] rounded-full hover:bg-accent-hover active:scale-95 transition-all duration-200"
-            >
-              Contacto
-              <span
-                aria-hidden="true"
-                className="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-white/20"
+          <div className="hidden sm:block justify-self-end">
+            <Magnetic strength={0.25}>
+              <Link
+                href="/contacto"
+                className="inline-flex items-center gap-2 text-[13px] font-semibold bg-accent text-white pl-[18px] pr-[7px] py-[7px] rounded-full hover:bg-accent-hover active:scale-95 transition-all duration-200"
               >
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3 13L13 3M13 3H6M13 3v7"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Link>
-          </Magnetic>
+                Contacto
+                <span
+                  aria-hidden="true"
+                  className="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-white/20"
+                >
+                  <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M3 13L13 3M13 3H6M13 3v7"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </Magnetic>
+          </div>
         </nav>
       </div>
     </header>
