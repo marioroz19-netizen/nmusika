@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Magnetic from "./Magnetic";
@@ -18,15 +17,12 @@ export default function Nav() {
     <header className="sticky top-0 z-20 bg-bg/70 backdrop-blur-xl backdrop-saturate-[1.8] border-b border-border">
       <div className="max-w-[1100px] mx-auto px-6">
         <nav className="grid grid-cols-[1fr_auto_1fr] items-center h-[64px]">
-          <Link href="/" className="justify-self-start shrink-0">
-            <Image
-              src="/brand/logo-white.png"
-              alt="N.MUSIKA"
-              width={1616}
-              height={240}
-              priority
-              className="h-[17px] w-auto opacity-90 hover:opacity-100 transition-opacity"
-            />
+          <Link
+            href="/"
+            aria-label="N.MUSIKA — Inicio"
+            className="justify-self-start shrink-0 text-[24px] leading-none font-semibold tracking-[-0.03em] text-text opacity-90 hover:opacity-100 transition-opacity"
+          >
+            N<span className="text-accent2">·</span>
           </Link>
 
           <div className="hidden sm:flex items-center gap-1 justify-self-center rounded-full border border-border p-1">
