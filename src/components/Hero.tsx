@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroVideo from "./HeroVideo";
 import type { hero as HeroContent } from "@/lib/content";
 
 export default function Hero({ hero }: { hero: typeof HeroContent }) {
@@ -12,30 +13,18 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
         style={{ left: "50%", width: "100vw", transform: "translateX(-50%)" }}
         aria-hidden="true"
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="w-full h-full object-cover opacity-[0.16]"
-        >
-          <source src="/video/hero-bg.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo />
       </div>
 
       <div className="max-w-[1100px] mx-auto px-6 min-h-[82vh] flex flex-col items-center justify-center text-center py-20">
         <h1
-          className="fade-up font-display font-normal tracking-[-0.02em] leading-[0.95] text-[clamp(38px,10.5vw,128px)]"
+          className="fade-up font-display font-normal tracking-[-0.02em] leading-[0.95] text-[14vw] sm:text-[clamp(38px,10.5vw,128px)]"
           style={{ "--d": "0.1s" } as React.CSSProperties}
         >
           N·MUSIKA
         </h1>
 
-        <p
-          className="fade-up mt-6 text-[19px] leading-relaxed text-muted max-w-[480px]"
-          style={{ "--d": "0.22s" } as React.CSSProperties}
-        >
+        <p className="pen-write mt-5 sm:mt-7 font-script text-[24px] sm:text-[38px] leading-[1.25] text-text/85 px-3">
           We love music, we build projects.
         </p>
       </div>
