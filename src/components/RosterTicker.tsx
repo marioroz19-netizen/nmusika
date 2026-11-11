@@ -1,9 +1,8 @@
 import { Artist } from "@/lib/content";
 
-// Banner del roster bajo el Hero: nombres en bucle continuo, en cursiva
-// display (Instrument Serif Italic) a toda la altura de la franja. Los
-// nombres alternan relleno crema y contorno cobre claro; el separador es
-// el punto "·" de la marca.
+// Banner del roster bajo el Hero: franja fina con los nombres en bucle
+// continuo, en letra display (Unbounded) y mayúsculas. Los nombres alternan
+// crema y cobre claro; el separador es el punto "·" de la marca.
 export default function RosterTicker({ artists }: { artists: Artist[] }) {
   if (artists.length === 0) return null;
   const loop = [...artists, ...artists];
@@ -18,7 +17,7 @@ export default function RosterTicker({ artists }: { artists: Artist[] }) {
           {loop.map((artist, i) => (
             <span key={`${artist.slug}-${i}`} className="flex items-center shrink-0">
               <span
-                className={`roster-name font-display italic whitespace-nowrap leading-none px-[0.28em] ${
+                className={`roster-name font-display whitespace-nowrap leading-none px-[0.5em] ${
                   i % 2 === 0 ? "text-text" : "roster-name--outline"
                 }`}
               >
