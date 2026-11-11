@@ -44,6 +44,7 @@
   --color-accent2-invert: var(--color-accent2-invert);
   --color-accent2-invert-hover: var(--color-accent2-invert-hover);
   --font-display: var(--font-unbounded), sans-serif;
+  --font-script: var(--font-allura), cursive;
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
@@ -153,7 +154,29 @@ body {
   }
 }
 
+/* Lema escrito "a pluma": se descubre de izquierda a derecha. */
+.pen-write {
+  clip-path: inset(-0.4em 100% -0.4em 0);
+  animation: penWrite 2.6s cubic-bezier(0.55, 0.1, 0.35, 1) 0.7s forwards;
+}
+@keyframes penWrite {
+  to {
+    clip-path: inset(-0.4em -0.2em -0.4em 0);
+  }
+}
+
+/* Nunca mostrar el botón de play nativo sobre el vídeo de fondo. */
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .pen-write {
+    animation: none;
+    clip-path: none;
+  }
   .reveal {
     opacity: 1;
     transform: none;
