@@ -26,16 +26,8 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
       </div>
 
       <div className="max-w-[1100px] mx-auto px-6 min-h-[82vh] flex flex-col items-center justify-center text-center py-20">
-        <div
-          className="fade-up inline-flex items-center gap-2 rounded-full border border-border pl-2 pr-4 py-1.5 text-[12px] font-medium tracking-[0.01em] text-muted"
-          style={{ "--d": "0s" } as React.CSSProperties}
-        >
-          <span className="w-[7px] h-[7px] rounded-full bg-accent2 shrink-0" aria-hidden="true" />
-          {hero.headline}
-        </div>
-
         <h1
-          className="fade-up mt-7 font-semibold tracking-[-0.03em] leading-[0.95] text-[clamp(48px,13.5vw,152px)]"
+          className="fade-up font-semibold tracking-[-0.03em] leading-[0.95] text-[clamp(48px,13.5vw,152px)]"
           style={{ "--d": "0.1s" } as React.CSSProperties}
         >
           N·MUSIKA
@@ -72,14 +64,6 @@ export default function Hero({ hero }: { hero: typeof HeroContent }) {
                   />
                 </svg>
               </span>
-            </Link>
-          </Magnetic>
-          <Magnetic strength={0.2}>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center text-[14px] font-semibold border border-border text-text px-[22px] py-[12px] rounded-full hover:border-text transition-colors duration-300"
-            >
-              Hablemos
             </Link>
           </Magnetic>
         </div>
