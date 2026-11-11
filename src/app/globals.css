@@ -2,12 +2,16 @@
 
 :root {
   /* Paleta "Cuero envejecido" (vintage): negro como color principal,
-     acento en marrón de cuero curtido, blancos cálidos en vez de fríos. */
+     marrón de cuero curtido (más oscuro) como acento de acción principal,
+     y azul marino como segundo acento para enlaces/estados secundarios,
+     blancos cálidos en vez de fríos. */
   --color-bg: #000000;
   --color-surface: #17120d;
   --color-border: rgba(239, 232, 221, 0.12);
-  --color-accent: #a0603a;
-  --color-accent-hover: #b4714a;
+  --color-accent: #7a4a28;
+  --color-accent-hover: #8f5a34;
+  --color-accent2: #3a5a7a;
+  --color-accent2-hover: #4c6f90;
   --color-text: #efe8dd;
   --color-muted: #9c9388;
 
@@ -15,8 +19,10 @@
   --color-text-invert: #1a1512;
   --color-muted-invert: #786a5c;
   --color-border-invert: rgba(26, 21, 18, 0.12);
-  --color-accent-invert: #7a4521;
-  --color-accent-invert-hover: #603518;
+  --color-accent-invert: #693c1c;
+  --color-accent-invert-hover: #522d15;
+  --color-accent2-invert: #1c3550;
+  --color-accent2-invert-hover: #27496a;
 }
 
 @theme inline {
@@ -25,6 +31,8 @@
   --color-border: var(--color-border);
   --color-accent: var(--color-accent);
   --color-accent-hover: var(--color-accent-hover);
+  --color-accent2: var(--color-accent2);
+  --color-accent2-hover: var(--color-accent2-hover);
   --color-text: var(--color-text);
   --color-muted: var(--color-muted);
   --color-bg-invert: var(--color-bg-invert);
@@ -33,6 +41,8 @@
   --color-border-invert: var(--color-border-invert);
   --color-accent-invert: var(--color-accent-invert);
   --color-accent-invert-hover: var(--color-accent-invert-hover);
+  --color-accent2-invert: var(--color-accent2-invert);
+  --color-accent2-invert-hover: var(--color-accent2-invert-hover);
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
 }
